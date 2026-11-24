@@ -69,7 +69,7 @@ export default function Hero() {
             Discover a considered approach to solar energy with KnashBD.
           </p>
           <span className="hero-rule" aria-hidden="true" />
-          <a href="#concept" className="hero-primary-link">
+          <a href="#about" className="hero-primary-link">
             The thinking behind it <ArrowIcon />
           </a>
         </div>

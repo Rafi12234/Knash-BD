@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 
 const links = [
   { label: 'Home', href: '#home' },
-  { label: 'The visual', href: '#solar-visual' },
-  { label: 'Our thinking', href: '#concept' },
+  { label: 'Our approach', href: '#approach' },
+  { label: 'About us', href: '#about' },
 ]
 
 function ArrowIcon({ diagonal = false }) {
@@ -51,7 +51,7 @@ export default function Navbar() {
 
       <div className="header-actions">
         <span className="header-location"><span className="live-dot" />Made for Bangladesh</span>
-        <a className="header-cta" href="#concept">Explore <ArrowIcon diagonal /></a>
+        <a className="header-cta" href="#about">Explore <ArrowIcon diagonal /></a>
         <button
           className={`menu-toggle ${menuOpen ? 'menu-toggle--open' : ''}`}
           type="button"

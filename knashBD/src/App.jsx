@@ -1,6 +1,9 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import TrustStrip from './components/TrustStrip'
+import About from './components/About'
 import './App.css'
+import './sections.css'
 
 function App() {
   return (
@@ -9,14 +12,8 @@ function App() {
       <Navbar />
       <main id="main">
         <Hero />
-        <section className="concept-section" id="concept" aria-labelledby="concept-title">
-          <div className="concept-label"><span className="concept-dot" />01 / OUR POINT OF VIEW</div>
-          <div className="concept-content">
-            <h2 id="concept-title">Good energy.<br /><em>Better thinking.</em></h2>
-            <p>We believe moving toward solar should feel clear, considered, and full of possibility. This is the beginning of the KnashBD story.</p>
-          </div>
-          <a href="#home" className="back-to-top">Back to the beginning <span aria-hidden="true">↑</span></a>
-        </section>
+        <TrustStrip />
+        <About />
       </main>
     </>
   )
