@@ -1,16 +1,31 @@
-# React + Vite
+# KnashBD — Navbar + Hero (Phase 01)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An editorial, white-theme React/Vite landing-page foundation for KnashBD. The first milestone intentionally covers **navigation, a cinematic hero reveal, and a minimal continuation**; solutions, projects, and contact sections are deliberately not invented.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+cd knashBD
+npm ci
+npm run dev
+```
 
-## React Compiler
+To validate: `npm run lint` and `npm run build`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Replace the hero still with your 10-second solar assembly video
 
-## Expanding the ESLint configuration
+1. Export the finished clip as a browser-compatible, muted, 16:9 MP4 (H.264 is a safe default).
+2. Place it at `public/media/knash-solar-assembly.mp4`.
+3. Copy `.env.example` to `.env` and uncomment `VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4`.
+4. Restart Vite.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The video is intentionally **scrubbed against page scroll** while the hero is sticky, rather than autoplaying independently. Until a video is supplied, the packaged solar artwork is displayed with subtle scroll parallax. The reveal, nav and section transition work without video.
+
+## Design considerations
+
+- A typography-first, split-word opening that expands a narrow vertical slice into a photographic capsule, referencing the *motion language* of the supplied inspiration without reusing its imagery or branding.
+- Responsive navbar with real anchor targets, keyboard-friendly mobile menu, Escape close, visible focus rings.
+- Reduced-motion support; no external UI framework, tracking scripts, or remote image requests.
+- The pale editorial continuation is only a transition into future sections, not a fabricated project portfolio.
+
+The solar visual is a KnashBD design concept, not a photograph of a completed client project.

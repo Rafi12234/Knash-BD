@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+<defs>
+  <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#62a5d6"/><stop offset=".62" stop-color="#c0dce7"/><stop offset="1" stop-color="#f5e9bf"/></linearGradient>
+  <linearGradient id="grass" x2="0" y2="1"><stop stop-color="#92bb61"/><stop offset="1" stop-color="#35764c"/></linearGradient>
+  <linearGradient id="cell" x2=".2" y2="1"><stop stop-color="#092b4e"/><stop offset=".55" stop-color="#22578b"/><stop offset="1" stop-color="#0b2e59"/></linearGradient>
+  <linearGradient id="steel" x2="1" y2="1"><stop stop-color="#d5e0df"/><stop offset=".5" stop-color="#788e93"/><stop offset="1" stop-color="#edf4ef"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#fff6c9" stop-opacity=".85"/><stop offset="1" stop-color="#fff9d5" stop-opacity="0"/></radialGradient>
+  <pattern id="cells" width="38" height="32" patternUnits="userSpaceOnUse"><path d="M38 0H0V32" fill="none" stroke="#c3e4f7" stroke-width="1.2" opacity=".67"/><path d="M0 1h38" stroke="#91bbd2" stroke-width=".45" opacity=".4"/></pattern>
+  <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#1a3b42" flood-opacity=".28"/></filter>
+</defs>
+<rect width="800" height="450" fill="url(#sky)"/>
+<circle cx="674" cy="107" r="128" fill="url(#glow)"/>
+<circle cx="680" cy="103" r="16" fill="#fff9d8"/>
+<path d="M0 255Q70 226 153 248T322 240Q405 207 510 249T800 231V450H0Z" fill="#8fae81"/>
+<path d="M0 277Q151 243 272 270T531 268Q683 244 800 260V450H0Z" fill="#6f9a5a"/>
+<path d="M0 298Q125 287 256 301T511 291Q642 275 800 297V450H0Z" fill="url(#grass)"/>
+<path d="M0 344Q190 320 391 342T800 322" fill="none" stroke="#bdcb7d" stroke-width="13" opacity=".34"/>
+<g opacity=".55" stroke="#e2e9bf" stroke-width="1.2">
+  <path d="M9 422l7-13m21 28 8-17m30 20 11-18m43 22 8-14m46 3 7-16m42 25 9-17m54 18 8-21m56 17 8-12m69 18 9-14m55 21 10-16m67 14 9-12m56 8 10-19m65 14 10-12"/>
+</g>
+<g fill="none" stroke="url(#steel)" stroke-linejoin="round" stroke-width="11" filter="url(#shadow)">
+  <path d="M115 306v122M350 285v116M589 263v104"/>
+  <path d="M115 320 350 300 589 278 771 266"/>
+  <path d="M115 320 185 262M350 300 420 245M589 278 635 230" stroke-width="7"/>
+</g>
+<g fill="none" stroke="#d1e3df" stroke-width="3"><path d="M115 306v122M350 285v116M589 263v104"/></g>
+<g filter="url(#shadow)">
+<path d="M427 248 793 195 793 248 427 306Z" fill="url(#cell)" stroke="#d9ecee" stroke-width="6"/>
+<path d="M427 248 793 195 793 248 427 306Z" fill="url(#cells)"/>
+<path d="M73 280 425 228 425 303 73 361Z" fill="url(#cell)" stroke="#e0e9e9" stroke-width="7"/>
+<path d="M73 280 425 228 425 303 73 361Z" fill="url(#cells)"/>
+</g>
+<g filter="url(#shadow)">
+ <g transform="translate(238 66) rotate(-11)"><rect x="0" y="0" width="183" height="96" rx="2" fill="url(#cell)" stroke="#e9f0ed" stroke-width="7"/><rect x="5" y="5" width="173" height="86" fill="url(#cells)"/></g>
+ <g transform="translate(495 24) rotate(14)"><rect width="158" height="86" rx="2" fill="url(#cell)" stroke="#d5e8ec" stroke-width="6"/><rect x="5" y="5" width="148" height="76" fill="url(#cells)"/></g>
+</g>
+<g stroke-linejoin="round" filter="url(#shadow)">
+  <path d="M-21 134 160 85 166 99-14 151Z" fill="url(#steel)" stroke="#e5eeeb" stroke-width="2"/>
+  <path d="M550 183 754 156 753 169 551 201Z" fill="url(#steel)" stroke="#e5eeeb" stroke-width="2"/>
+  <path d="M428 180h28v12h-28z" fill="#cfdddc"/>
+  <path d="M188 182h18v8h-18z" fill="#b5c7ca"/>
+  <path d="M678 200h17v8h-17z" fill="#e0eae8"/>
+</g>
+<g fill="none" stroke="#8de5f0" stroke-width="2" opacity=".75">
+ <path d="M32 186Q96 104 184 133T326 166"/>
+ <path d="M618 117Q677 161 594 229"/>
+ <path d="M379 196Q420 218 470 209"/>
+</g>
+<g fill="#c2fbfa"><circle cx="184" cy="133" r="3"/><circle cx="594" cy="229" r="3"/><circle cx="470" cy="209" r="2.7"/></g>
+</svg>
