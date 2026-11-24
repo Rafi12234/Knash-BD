@@ -1,8 +1,8 @@
-# KnashBD — Navbar + Hero (Phase 01)
+# KnashBD — Editorial Solar Landing Page
 
-An editorial, white-theme React/Vite landing-page foundation for KnashBD. The first milestone intentionally covers **navigation, a cinematic hero reveal, and a minimal continuation**; solutions, projects, and contact sections are deliberately not invented.
+React 19 + Vite, developed one part at a time. The current milestone covers the **navbar, cinematic hero, trust/approach strip, and About KnashBD**. Future services, projects, testimonials and contact sections are intentionally left for later phases.
 
-## Run locally
+## Getting started
 
 ```bash
 cd knashBD
@@ -12,20 +12,23 @@ npm run dev
 
 To validate: `npm run lint` and `npm run build`.
 
-## Replace the hero still with your 10-second solar assembly video
+## Optional hero video
 
-1. Export the finished clip as a browser-compatible, muted, 16:9 MP4 (H.264 is a safe default).
-2. Place it at `public/media/knash-solar-assembly.mp4`.
-3. Copy `.env.example` to `.env` and uncomment `VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4`.
+The hero displays a bundled solar illustration until the video is provided:
+
+1. Add a browser-compatible H.264 MP4 to `public/media/knash-solar-assembly.mp4`.
+2. Copy `.env.example` to `.env` in the `knashBD` folder.
+3. Set `VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4`.
 4. Restart Vite.
 
-The video is intentionally **scrubbed against page scroll** while the hero is sticky, rather than autoplaying independently. Until a video is supplied, the packaged solar artwork is displayed with subtle scroll parallax. The reveal, nav and section transition work without video.
+**The hero film autoplays, is muted, and loops continuously; scrolling does not control video playback.** The capsule entrance reveal is independent of the video.
 
-## Design considerations
+## Current sections
 
-- A typography-first, split-word opening that expands a narrow vertical slice into a photographic capsule, referencing the *motion language* of the supplied inspiration without reusing its imagery or branding.
-- Responsive navbar with real anchor targets, keyboard-friendly mobile menu, Escape close, visible focus rings.
-- Reduced-motion support; no external UI framework, tracking scripts, or remote image requests.
-- The pale editorial continuation is only a transition into future sections, not a fabricated project portfolio.
+- `src/components/Navbar.jsx`: responsive navigation with links to each implemented section.
+- `src/components/Hero.jsx`: opening typographic hero and looping-video slot.
+- `src/components/TrustStrip.jsx`: three concise approach principles. No invented client counts, certifications, or awards.
+- `src/components/About.jsx`: editorial company introduction and original solar array schematic (clearly labeled as conceptual).
+- `src/components/useReveal.js` and `src/sections.css`: lightweight intersection reveals with reduced-motion support and responsive design.
 
-The solar visual is a KnashBD design concept, not a photograph of a completed client project.
+The current About and trust copy is brand-positioning language, not a representation of completed installations or independently verified credentials. Replace it with approved company facts when available.
