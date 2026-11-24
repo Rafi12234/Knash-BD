@@ -5,6 +5,7 @@ import About from './components/About'
 import Solutions from './components/Solutions'
 import Benefits from './components/Benefits'
 import Process from './components/Process'
+import Projects from './components/Projects'
 import './App.css'
 import './sections.css'
 import './phase4.css'
@@ -12,6 +13,7 @@ import './photography.css'
 import './about-cinematic.css'
 import './solutions-overlay.css'
 import './experience.css'
+import './projects.css'
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
         <Solutions />
         <Benefits />
         <Process />
+        <Projects />
       </main>
     </>
   )

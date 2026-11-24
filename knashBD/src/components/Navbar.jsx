@@ -7,6 +7,7 @@ const links = [
   { label: 'Solutions', href: '#solutions' },
   { label: 'Why solar', href: '#benefits' },
   { label: 'Process', href: '#process' },
+  { label: 'Projects', href: '#projects' },
 ]
 
 function ArrowIcon({ diagonal = false }) {
