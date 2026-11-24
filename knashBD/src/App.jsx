@@ -14,6 +14,7 @@ import './about-cinematic.css'
 import './solutions-overlay.css'
 import './experience.css'
 import './projects.css'
+import './how-work-premium.css'
 
 function App() {
   return (
