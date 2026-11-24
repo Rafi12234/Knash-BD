@@ -7,6 +7,7 @@ import Benefits from './components/Benefits'
 import './App.css'
 import './sections.css'
 import './phase4.css'
+import './photography.css'
 
 function App() {
   return (

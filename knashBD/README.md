@@ -44,3 +44,7 @@ The Solutions section contains three **illustrative application studies** (resid
 The navbar is a compact liquid-glass capsule with backdrop blur, light-edge refraction, and a scroll-aware state. It now links to all implemented sections and supports a keyboard-accessible mobile menu. The background video continues to autoplay and loop independently of page scrolling.
 
 Specific service availability, track record and product promises should be confirmed with KnashBD before publishing commercial claims.
+
+## Photographic sections (Phase 05)
+
+The About section and the three Solar Solutions states now feature locally bundled, optimized WebP concept images instead of schematic SVG illustrations. The About image enters with a cinematic zoom; selecting a solar application smoothly cross-dissolves and reframes its photograph with an animated editorial caption. Images live in `public/media/` (no third-party runtime requests), are lazy-loaded, and preserve a reduced-motion experience. Generated concept photos are explicitly labeled and must not be represented as completed KnashBD client projects.
