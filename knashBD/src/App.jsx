@@ -8,6 +8,7 @@ import './App.css'
 import './sections.css'
 import './phase4.css'
 import './photography.css'
+import './about-cinematic.css'
 
 function App() {
   return (
