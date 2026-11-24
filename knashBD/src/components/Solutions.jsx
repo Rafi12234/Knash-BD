@@ -89,18 +89,32 @@ export default function Solutions() {
             ))}
             <span className="solutions-photo-shade" aria-hidden="true" />
             <span className="solutions-photo-topline" aria-hidden="true">KN / {selected.index} — SOLAR APPLICATIONS</span>
-            <span className="solutions-figure-stamp" aria-hidden="true">K / BD <span>—</span> IN A NEW LIGHT</span>
             <span className="solutions-photo-index" aria-hidden="true">{selected.index} / 03</span>
           </div>
-          <figcaption className="solutions-caption" id="solution-description" aria-live="polite" aria-atomic="true">
-            <div className="solutions-caption-copy" key={selected.id}>
-              <span className="solutions-caption-label">{selected.caption}</span>
-              <h3>{selected.subtitle}</h3>
-              <p>{selected.details}</p>
-            </div>
-            <span className="solutions-caption-issue">FIG. {selected.index}</span>
+          <figcaption className="solutions-caption solutions-caption--immersive" id="solution-description">
+            {applications.map((item) => {
+              const isActive = active === item.id
+              return (
+                <div
+                  key={item.id}
+                  className={`solutions-overlay-panel ${isActive ? 'solutions-overlay-panel--active' : ''}`}
+                  aria-hidden={!isActive}
+                >
+                  <div className="solutions-overlay-meta">
+                    <span>{item.caption}</span>
+                    <span>FIG. {item.index} / 03</span>
+                  </div>
+                  <h3>{item.subtitle}</h3>
+                  <p>{item.details}</p>
+                  <span className="solutions-overlay-accent" aria-hidden="true" />
+                </div>
+              )
+            })}
           </figcaption>
-          <span className="visually-hidden">Illustration concept: {selected.imageAlt}</span>
+          <span className="visually-hidden" aria-live="polite" aria-atomic="true">
+            {selected.title} solar: {selected.subtitle} {selected.details}
+            This is a generated concept image, not a completed KnashBD project.
+          </span>
         </figure>
       </div>
       <div className="solutions-endnote" data-reveal>

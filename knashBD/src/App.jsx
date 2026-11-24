@@ -9,6 +9,7 @@ import './sections.css'
 import './phase4.css'
 import './photography.css'
 import './about-cinematic.css'
+import './solutions-overlay.css'
 
 function App() {
   return (
