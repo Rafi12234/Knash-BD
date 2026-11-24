@@ -33,7 +33,7 @@ export default function Projects() {
   const next = studies[nextIndex]
 
   const handleKeys = (event, index) => {
-    let target = index
+    let target
     if (event.key === 'ArrowRight' || event.key === 'ArrowDown') target = (index + 1) % studies.length
     else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') target = (index - 1 + studies.length) % studies.length
     else if (event.key === 'Home') target = 0
