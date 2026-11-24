@@ -22,6 +22,14 @@ export { ArrowIcon }
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 32)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     if (!menuOpen) return undefined
@@ -35,7 +43,7 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? 'site-header--scrolled' : ''}`}>
       <a className="brand" href="#home" aria-label="KnashBD — home" onClick={closeMenu}>
         <span className="brand-mark" aria-hidden="true"><span /><span /><span /><span /></span>
         <span className="brand-name">knash<span className="brand-suffix">BD</span><span className="brand-period">.</span></span>
@@ -51,7 +59,7 @@ export default function Navbar() {
 
       <div className="header-actions">
         <span className="header-location"><span className="live-dot" />Made for Bangladesh</span>
-        <a className="header-cta" href="#about">Explore <ArrowIcon diagonal /></a>
+        <a className="header-cta" href="#approach">Explore <ArrowIcon diagonal /></a>
         <button
           className={`menu-toggle ${menuOpen ? 'menu-toggle--open' : ''}`}
           type="button"

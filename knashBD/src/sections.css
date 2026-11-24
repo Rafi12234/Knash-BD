@@ -1,6 +1,4 @@
 /* Phase 02 — an editorial rhythm of white space, fine rules, and deliberate type. */
-.hero-track { height: 100svh; min-height: 610px; }
-.hero-shell { position: relative; top: auto; }
 .trust-section, .about-section { scroll-margin-top: 94px; }
 
 /* Entrance choreography is only enabled for offscreen elements by the observer. */

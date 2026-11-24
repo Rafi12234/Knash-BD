@@ -1,103 +1,112 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowIcon } from './Navbar'
 
-// Add your video to public/media and set its URL in your .env file:
-// VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4
-const filmUrl = import.meta.env.VITE_HERO_VIDEO_URL?.trim()
+// The included 10-second ambient loop is a placeholder. Replace it with your
+// finished self-assembling solar film using VITE_HERO_VIDEO_URL in .env.
+const filmUrl = import.meta.env.VITE_HERO_VIDEO_URL?.trim() || '/media/solar-field-loop.mp4'
+const posterUrl = '/media/solar-field-poster.webp'
+
+function useReducedMotion() {
+  const [reduced, setReduced] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  )
+
+  useEffect(() => {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const onChange = () => setReduced(preference.matches)
+    preference.addEventListener('change', onChange)
+    return () => preference.removeEventListener('change', onChange)
+  }, [])
+
+  return reduced
+}
 
 export default function Hero() {
-  const [replayKey, setReplayKey] = useState(0)
-  const [filmReady, setFilmReady] = useState(false)
+  const filmRef = useRef(null)
+  const reducedMotion = useReducedMotion()
+  const [userPaused, setUserPaused] = useState(false)
   const [filmFailed, setFilmFailed] = useState(false)
+  const [filmReady, setFilmReady] = useState(false)
+  const isPaused = userPaused || reducedMotion
+
+  useEffect(() => {
+    const film = filmRef.current
+    if (!film) return
+
+    if (isPaused) {
+      film.pause()
+    } else {
+      // Some browsers need an explicit play after a motion-preference change.
+      film.play().catch(() => {
+        // The poster remains visible when a browser disallows autoplay.
+      })
+    }
+  }, [isPaused])
 
   return (
     <section className="hero-track" id="home" aria-labelledby="hero-title">
-      <div className="hero-shell">
-        <div className="contour-pattern" aria-hidden="true" />
-        <div className="hero-topnote" aria-hidden="true">
-          <span className="topnote-line" />
-          K / 001 — A DIFFERENT KIND OF ENERGY
-          <span className="topnote-line" />
+      <div className="hero-background" aria-hidden="true">
+        <img className="hero-poster" src={posterUrl} alt="" fetchPriority="high" />
+        {!filmFailed && (
+          <video
+            ref={filmRef}
+            className={`hero-film ${filmReady ? 'hero-film--ready' : ''}`}
+            src={filmUrl}
+            poster={posterUrl}
+            autoPlay={!isPaused}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            onPlaying={() => setFilmReady(true)}
+            onError={() => setFilmFailed(true)}
+          />
+        )}
+        <div className="hero-tone" />
+        <div className="hero-vignette" />
+      </div>
+
+      <div className="hero-inner">
+        <div className="hero-overline" aria-hidden="true">
+          <span className="hero-overline-left"><span className="hero-crosshair">✳</span> KNASHBD / SOLAR PERSPECTIVES</span>
+          <span className="hero-overline-right">ANOTHER WAY FORWARD — 001</span>
         </div>
 
-        <div className="hero-stage" id="solar-visual" key={replayKey}>
-          <span className="stage-side-note stage-side-note--left" aria-hidden="true">
-            DESIGNED TO MAKE A DIFFERENCE
-          </span>
-
-          <h1 className="hero-display" id="hero-title" aria-label="Solar. A new perspective on energy.">
-            <span className="hero-letters" aria-hidden="true">SO</span>
-            <span className="hero-aperture" aria-hidden="true">
-              <img
-                className="hero-poster"
-                src="/media/solar-assembly-poster.svg"
-                alt=""
-                fetchPriority="high"
-              />
-              {filmUrl && !filmFailed && (
-                <video
-                  className={`hero-film ${filmReady ? 'hero-film--ready' : ''}`}
-                  src={filmUrl}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  aria-hidden="true"
-                  onLoadedData={() => setFilmReady(true)}
-                  onError={() => setFilmFailed(true)}
-                />
-              )}
-              <span className="aperture-wash" />
-            </span>
-            <span className="hero-letters" aria-hidden="true">LAR</span>
+        <div className="hero-content">
+          <div className="hero-eyebrow"><span className="eyebrow-rule" /> THE FUTURE LOOKS BRIGHTER FROM HERE</div>
+          <h1 className="hero-heading" id="hero-title">
+            <span className="hero-line-mask"><span className="hero-line hero-line--first">Energy for</span></span>
+            <span className="hero-line-mask"><span className="hero-line hero-line--second">what's <em>next.</em></span></span>
           </h1>
-
-          <span className="stage-side-note stage-side-note--right" aria-hidden="true">
-            FROM IDEA TO INSTALLATION
-          </span>
+          <div className="hero-content-footer">
+            <p>Solar isn't only about generating power. It's about seeing what the future could become.</p>
+            <div className="hero-links">
+              <a className="hero-action-primary" href="#approach">
+                Discover our approach <span className="hero-action-arrow"><ArrowIcon diagonal /></span>
+              </a>
+              <a className="hero-action-secondary" href="#about">Meet KnashBD <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
         </div>
 
-        <div className="hero-underword" aria-hidden="true">
-          <span>THE POWER OF A NEW PERSPECTIVE</span>
-          <span>SOLAR / REIMAGINED</span>
-        </div>
+        <div className="hero-edge-label" aria-hidden="true">THOUGHTFULLY / SOLAR</div>
 
-        <div className="hero-bottom">
-          <p className="hero-description">
-            <span className="dropcap">S</span>unlight is ordinary. What we do with it should be anything but.
-            Discover a considered approach to solar energy with KnashBD.
-          </p>
-          <span className="hero-rule" aria-hidden="true" />
-          <a href="#about" className="hero-primary-link">
-            The thinking behind it <ArrowIcon />
-          </a>
-        </div>
-
-        <div className="hero-utility">
+        <div className="hero-bottom-rail">
+          <span className="hero-rail-index">01 <span className="hero-rail-slash">/</span> ENERGY, REIMAGINED</span>
           <button
-            className="replay-button"
             type="button"
+            className="hero-motion-button"
             onClick={() => {
-              setFilmReady(false)
-              setReplayKey((current) => current + 1)
+              if (reducedMotion) return
+              setUserPaused((paused) => !paused)
             }}
-            aria-label="Replay hero reveal animation"
+            disabled={reducedMotion || filmFailed}
+            aria-label={isPaused ? 'Play background video' : 'Pause background video'}
           >
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path
-                d="M16 7.3A6.7 6.7 0 1 0 16.7 10M16 3.5v3.9h-3.9"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span>Replay reveal</span>
+            <span className="hero-motion-icon" aria-hidden="true">{isPaused ? '▶' : 'Ⅱ'}</span>
+            <span>{reducedMotion ? 'REDUCED MOTION' : filmFailed ? 'STILL FRAME' : isPaused ? 'PLAY FILM' : 'PAUSE FILM'}</span>
           </button>
-          <span className="scroll-cue">
-            SCROLL TO EXPLORE <span className="scroll-cue-arrow" aria-hidden="true">↓</span>
-          </span>
+          <a href="#approach" className="hero-scroll-link">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a>
         </div>
       </div>
     </section>

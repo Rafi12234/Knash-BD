@@ -1,8 +1,8 @@
-# KnashBD — Editorial Solar Landing Page
+# KnashBD — Editorial solar landing page
 
-React 19 + Vite, developed one part at a time. The current milestone covers the **navbar, cinematic hero, trust/approach strip, and About KnashBD**. Future services, projects, testimonials and contact sections are intentionally left for later phases.
+A white editorial design system for KnashBD with three implemented sections: cinematic hero, approach/credibility, and about. Built with React 19 and Vite, without an animation framework or UI kit.
 
-## Getting started
+## Run
 
 ```bash
 cd knashBD
@@ -10,25 +10,20 @@ npm ci
 npm run dev
 ```
 
-To validate: `npm run lint` and `npm run build`.
+For verification, use `npm run lint` and `npm run build`.
 
-## Optional hero video
+## Full-bleed looping hero video
 
-The hero displays a bundled solar illustration until the video is provided:
+The site ships with a lightweight 10-second **ambient placeholder loop** (`public/media/solar-field-loop.mp4`) made from an original solar reference still. It is **not** the fictional solar-panel self-assembly film. It plays automatically, muted, inline and loops independently of scrolling. A matching poster is used while it loads, on failure, or when motion reduction is requested. Visitors can pause/play from the discreet bottom rail.
 
-1. Add a browser-compatible H.264 MP4 to `public/media/knash-solar-assembly.mp4`.
-2. Copy `.env.example` to `.env` in the `knashBD` folder.
-3. Set `VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4`.
-4. Restart Vite.
+To use your final Google Vids assembly video:
 
-**The hero film autoplays, is muted, and loops continuously; scrolling does not control video playback.** The capsule entrance reveal is independent of the video.
+1. Save it as `public/media/knash-solar-assembly.mp4` (H.264 MP4 recommended).
+2. Copy `.env.example` to `.env` and uncomment `VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4`.
+3. Restart Vite. Video automatically fills the hero with `object-fit: cover`.
 
-## Current sections
+The first viewport has a large, staggered editorial headline, grounded supporting copy and links to existing page anchors. The fixed navbar uses a subtle liquid-glass treatment (backdrop blur, saturate, soft refraction/highlight, inset rim). The later white-themed sections remain intact.
 
-- `src/components/Navbar.jsx`: responsive navigation with links to each implemented section.
-- `src/components/Hero.jsx`: opening typographic hero and looping-video slot.
-- `src/components/TrustStrip.jsx`: three concise approach principles. No invented client counts, certifications, or awards.
-- `src/components/About.jsx`: editorial company introduction and original solar array schematic (clearly labeled as conceptual).
-- `src/components/useReveal.js` and `src/sections.css`: lightweight intersection reveals with reduced-motion support and responsive design.
+Respect visitors' reduced-motion preference: the backdrop becomes a static poster and entrance animations stop. All interactive controls are keyboard accessible.
 
-The current About and trust copy is brand-positioning language, not a representation of completed installations or independently verified credentials. Replace it with approved company facts when available.
+Credibility content is framed as values, not invented stats, partnerships, or testimonials. Solar visuals are conceptual, not delivered client projects.
