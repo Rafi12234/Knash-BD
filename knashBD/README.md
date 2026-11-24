@@ -1,8 +1,8 @@
-# KnashBD — Editorial solar landing page
+# KnashBD — Editorial Solar Landing Page
 
-A white editorial design system for KnashBD with three implemented sections: cinematic hero, approach/credibility, and about. Built with React 19 and Vite, without an animation framework or UI kit.
+React 19 + Vite, developed one part at a time. This version includes the **navbar, cinematic hero, trust/approach strip, and About KnashBD**. Future service, project, testimonial, and contact sections are not fabricated.
 
-## Run
+## Getting started
 
 ```bash
 cd knashBD
@@ -10,20 +10,37 @@ npm ci
 npm run dev
 ```
 
-For verification, use `npm run lint` and `npm run build`.
+Build and lint checks:
 
-## Full-bleed looping hero video
+```bash
+npm run lint
+npm run build
+```
 
-The site ships with a lightweight 10-second **ambient placeholder loop** (`public/media/solar-field-loop.mp4`) made from an original solar reference still. It is **not** the fictional solar-panel self-assembly film. It plays automatically, muted, inline and loops independently of scrolling. A matching poster is used while it loads, on failure, or when motion reduction is requested. Visitors can pause/play from the discreet bottom rail.
+## Hero video (optional)
 
-To use your final Google Vids assembly video:
+The hero works with its bundled vector poster until you supply your own 10-second film. To activate the film:
 
-1. Save it as `public/media/knash-solar-assembly.mp4` (H.264 MP4 recommended).
-2. Copy `.env.example` to `.env` and uncomment `VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4`.
-3. Restart Vite. Video automatically fills the hero with `object-fit: cover`.
+1. Add your browser-compatible H.264 MP4 to `public/media/knash-solar-assembly.mp4`.
+2. Copy `.env.example` to `.env` in the `knashBD` folder.
+3. Set `VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4`.
+4. Restart the Vite server.
 
-The first viewport has a large, staggered editorial headline, grounded supporting copy and links to existing page anchors. The fixed navbar uses a subtle liquid-glass treatment (backdrop blur, saturate, soft refraction/highlight, inset rim). The later white-themed sections remain intact.
+The film **autoplays muted and loops**; it is not scrubbed by scroll. The capsule entrance reveal is independent of film playback.
 
-Respect visitors' reduced-motion preference: the backdrop becomes a static poster and entrance animations stop. All interactive controls are keyboard accessible.
+## Section design
 
-Credibility content is framed as values, not invented stats, partnerships, or testimonials. Solar visuals are conceptual, not delivered client projects.
+- `src/components/TrustStrip.jsx`: a restrained three-part typographic approach statement, rather than unsupported customer counts or certification logos.
+- `src/components/About.jsx`: brand introduction paired with an original architectural solar-panel study. The study is clearly labeled conceptual, not a delivered project.
+- `src/components/useReveal.js` and `src/sections.css`: lightweight, one-time intersection reveals, reduced-motion handling, responsive editorial layout.
+- Navigation and hero CTA use real anchors for the new sections.
+
+**Content note:** Principle statements and About copy are positioning language, not claims of completed projects, warranties, years of experience, industry awards, or customer satisfaction. Replace with approved company facts when available.
+
+## Phase 04: Applications + Why Solar
+
+The Solutions section contains three **illustrative application studies** (residential rooftops, commercial rooftops, and open-field arrays). Select a study to change the technical drawing and its narrative; the drawings are custom SVGs, not completed project photographs. The benefits section uses broad, factual explanations without invented ROI, energy-savings figures, or warranties.
+
+The navbar is a compact liquid-glass capsule with backdrop blur, light-edge refraction, and a scroll-aware state. It now links to all implemented sections and supports a keyboard-accessible mobile menu. The background video continues to autoplay and loop independently of page scrolling.
+
+Specific service availability, track record and product promises should be confirmed with KnashBD before publishing commercial claims.
