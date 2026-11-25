@@ -3,7 +3,7 @@ import useReveal from './useReveal'
 import { approvedClients, approvedTestimonials, prototypeBrands } from '../data/socialProof'
 
 // Until client-owned proof is approved, show explicitly labeled application studies.
-// These scenes are NOT customer reviews or completed KnashBD case studies.
+// These scenes are NOT customer reviews or completed Knash Engineering Limited case studies.
 const concepts = [
   {
     id: 'living', number: '01', category: 'URBAN ROOFTOP / APPLICATION STUDY',
@@ -111,7 +111,7 @@ export default function SocialProof() {
           ))}
           <span className="proof-picture-shade" aria-hidden="true" />
           <div className="proof-picture-corners" aria-hidden="true" />
-          <div className="proof-picture-top" aria-hidden="true"><span>KNASHBD / CONCEPT VISUALS</span><span>{current.number || String(active + 1).padStart(2, '0')} — {String(stories.length).padStart(2, '0')}</span></div>
+          <div className="proof-picture-top" aria-hidden="true"><span>KNASH ENGINEERING LIMITED / CONCEPT VISUALS</span><span>{current.number || String(active + 1).padStart(2, '0')} — {String(stories.length).padStart(2, '0')}</span></div>
           <div className="proof-picture-bottom" aria-hidden="true"><span>{current.footing || current.category}</span><span>↗</span></div>
         </div>
 
@@ -143,7 +143,7 @@ export default function SocialProof() {
 
       <div className="proof-client-rail" data-reveal>
         <div className="proof-rail-meta"><span className="proof-rail-dash" />{hasClients ? 'OUR VERIFIED CLIENTS' : '15 BRAND REFERENCES / FRONTEND DEMO'}</div>
-        <div className="proof-logo-viewport" aria-label={hasClients ? 'Verified client logos' : '15 illustrative brand logo references for a frontend prototype; none are KnashBD clients'}>
+        <div className="proof-logo-viewport" aria-label={hasClients ? 'Verified client logos' : '15 illustrative brand logo references for a frontend prototype; none are Knash Engineering Limited clients'}>
           <div className="proof-logo-track">
             {[0, 1].map((copy) => (
               <div key={copy} className="proof-logo-set" aria-hidden={copy === 1}>
@@ -154,7 +154,7 @@ export default function SocialProof() {
                   </a>
                 )) : prototypeBrands.map((brand) => (
                   <div key={brand.name} className="proof-demo-brand" role="img"
-                    aria-label={brand.name + ' — demo brand reference only, not a KnashBD client'}>
+                    aria-label={brand.name + ' — demo brand reference only, not a Knash Engineering Limited client'}>
                     <span className="proof-demo-icon" aria-hidden="true">
                       <span className="proof-demo-monogram">{brand.monogram}</span>
                       <img src={`https://www.google.com/s2/favicons?domain=${brand.domain}&sz=128`}
@@ -171,7 +171,7 @@ export default function SocialProof() {
             ))}
           </div>
         </div>
-        <p className="proof-verification-note">{hasClients ? 'Client marks displayed with permission.' : 'Prototype brand references only. These brands are NOT KnashBD customers, partners, sponsors or endorsers. Replace with authorized client logos before publishing.'}</p>
+        <p className="proof-verification-note">{hasClients ? 'Client marks displayed with permission.' : 'Prototype brand references only. These brands are NOT Knash Engineering Limited customers, partners, sponsors or endorsers. Replace with authorized client logos before publishing.'}</p>
       </div>
       <div className="proof-endnote" data-reveal><span>PEOPLE FIRST. DETAILS MATTER.</span><a href="#projects">RETURN TO PROJECT STUDIES <span aria-hidden="true">↗</span></a></div>
     </section>

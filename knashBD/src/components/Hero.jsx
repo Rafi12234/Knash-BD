@@ -68,7 +68,7 @@ export default function Hero() {
 
       <div className="hero-inner">
         <div className="hero-overline" aria-hidden="true">
-          <span className="hero-overline-left"><span className="hero-crosshair">✳</span> KNASHBD / SOLAR PERSPECTIVES</span>
+          <span className="hero-overline-left"><span className="hero-crosshair">✳</span> KNASH ENGINEERING LIMITED / SOLAR PERSPECTIVES</span>
           <span className="hero-overline-right">ANOTHER WAY FORWARD — 001</span>
         </div>
 
@@ -84,7 +84,7 @@ export default function Hero() {
               <a className="hero-action-primary" href="#approach">
                 Discover our approach <span className="hero-action-arrow"><ArrowIcon diagonal /></span>
               </a>
-              <a className="hero-action-secondary" href="#about">Meet KnashBD <span aria-hidden="true">↗</span></a>
+              <a className="hero-action-secondary" href="#about">Meet Knash Engineering Limited <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </div>

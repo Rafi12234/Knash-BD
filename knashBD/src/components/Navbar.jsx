@@ -68,9 +68,9 @@ export default function Navbar() {
   return (
     <header className={`site-header site-header--refined ${scrolled ? 'site-header--scrolled' : ''} ${menuOpen ? 'site-header--menu-open' : ''}`}>
       <span className="glass-sheen" aria-hidden="true" />
-      <a className="brand" href="#home" aria-label="KnashBD — home" onClick={() => setMenuOpen(false)}>
-        <span className="brand-mark" aria-hidden="true"><span /><span /><span /><span /></span>
-        <span className="brand-name">knash<span className="brand-suffix">BD</span><span className="brand-period">.</span></span>
+      <a className="brand" href="#home" aria-label="Knash Engineering Limited — home" onClick={() => setMenuOpen(false)}>
+        <img src="/kel-logo-standard.svg" className="brand-kel-logo" alt="" width="1242" height="937" />
+        <span className="brand-legal-name"><strong>KNASH</strong><span>ENGINEERING LIMITED</span></span>
       </a>
 
       <nav className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`} id="site-navigation" aria-label="Main navigation">

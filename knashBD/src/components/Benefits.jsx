@@ -52,13 +52,13 @@ export default function Benefits() {
             ))}
           </div>
           <div className="benefits-showcase__glass" aria-hidden="true" />
-          <span className="benefits-showcase__topline" aria-hidden="true">KNASHBD / SOLAR PERSPECTIVES</span>
+          <span className="benefits-showcase__topline" aria-hidden="true">KNASH ENGINEERING LIMITED / SOLAR PERSPECTIVES</span>
           <div className="benefits-showcase__foot">
             <span>LIGHT, PUT TO WORK.</span>
             <span className="benefits-showcase__counter">{selected.number} <span>/</span> 03</span>
           </div>
           <figcaption className="visually-hidden" aria-live="polite" aria-atomic="true">
-            {selected.imageDescription}. Generated conceptual illustration, not a photograph of a KnashBD project.
+            {selected.imageDescription}. Generated conceptual illustration, not a photograph of a Knash Engineering Limited project.
           </figcaption>
         </figure>
 

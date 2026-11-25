@@ -70,7 +70,7 @@ export default function Process() {
           width="1280" height="880" loading="lazy" decoding="async" />
         <span className="kn-work__hero-wash" aria-hidden="true" />
         <div className="kn-work__hero-content" data-reveal>
-          <p className="kn-work__eyebrow"><span /> KNASHBD / THE INSTALLATION JOURNEY</p>
+          <p className="kn-work__eyebrow"><span /> KNASH ENGINEERING LIMITED / THE INSTALLATION JOURNEY</p>
           <h2 id="kn-work-heading">How We Work <span className="kn-work__dash">—</span><em>Installation process</em></h2>
           <span className="kn-work__heading-mark" aria-hidden="true" />
           <p className="kn-work__hero-intro">From the first conversation to the final connection.</p>

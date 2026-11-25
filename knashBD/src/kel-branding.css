@@ -1,0 +1,42 @@
+/* KEL identity: supplied blue architectural symbol and KEL lettermark, adapted for light/dark contexts. */
+.site-header--refined .brand { gap: 10px; min-width: 0; }
+.brand-kel-logo { display: block; width: auto; height: 47px; flex: 0 0 auto; }
+.brand-legal-name { display: flex; flex-direction: column; justify-content: center; gap: 3px; white-space: nowrap; line-height: 1; }
+.brand-legal-name strong { display: block; color: #142c22; font-size: 15px; font-weight: 800; letter-spacing: -.055em; }
+.brand-legal-name span { display: block; color: #3f5c50; font-size: 8px; font-weight: 780; letter-spacing: .07em; }
+.footer-small-brand { gap: 12px; letter-spacing: normal; }
+.footer-kel-logo { display: block; width: auto; height: 83px; flex: 0 0 auto; }
+.footer-brand-legal { display: flex; flex-direction: column; gap: 5px; white-space: nowrap; line-height: 1.13; }
+.footer-brand-legal strong { color: #f2f7f2; font-size: 18px; font-weight: 800; letter-spacing: -.055em; }
+.footer-brand-legal span { color: #c8dac8; font-size: 9px; letter-spacing: .08em; font-weight: 750; }
+.knash-footer .footer-wordmark { display: flex; align-items: center; gap: clamp(17px, 4vw, 63px); margin: 0; padding: 12px 0 18px; overflow: visible; white-space: normal; line-height: 1; letter-spacing: normal; font-size: inherit; user-select: none; }
+.footer-wordmark-symbol { display: block; flex: 0 0 auto; }
+.footer-wordmark-symbol img { display: block; width: auto; height: clamp(100px, 16.6vw, 245px); }
+.footer-wordmark-text { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; gap: clamp(10px, 1.4vw, 23px); }
+.footer-wordmark-text strong { display: block; color: #ebf6e7; font-weight: 800; font-size: clamp(68px, 13.5vw, 200px); letter-spacing: -.087em; line-height: .82; }
+.footer-wordmark-text > span { display: block; color: #c7dfc6; font-size: clamp(17px, 3.65vw, 55px); font-weight: 750; letter-spacing: -.018em; line-height: 1.05; }
+@media (max-width: 1320px) {
+  .site-header--refined .brand { gap: 8px; }
+  .brand-kel-logo { height: 41px; }
+  .brand-legal-name strong { font-size: 13px; }
+  .brand-legal-name span { font-size: 7px; }
+}
+@media (max-width: 560px) {
+  .brand-kel-logo { height: 37px; }
+  .brand-legal-name strong { font-size: 12px; }
+  .brand-legal-name span { font-size: 6.7px; }
+  .footer-kel-logo { height: 72px; }
+  .footer-brand-legal strong { font-size: 16px; }
+  .footer-brand-legal span { font-size: 8px; }
+  .knash-footer .footer-wordmark { gap: 13px; }
+  .footer-wordmark-symbol img { height: clamp(70px, 23vw, 109px); }
+  .footer-wordmark-text strong { font-size: clamp(53px, 15vw, 76px); }
+  .footer-wordmark-text > span { font-size: clamp(11px, 3.65vw, 18px); }
+}
+@media (max-width: 380px) {
+  .brand-kel-logo { height: 34px; }
+  .brand-legal-name strong { font-size: 11px; }
+  .brand-legal-name span { font-size: 6px; }
+  .footer-wordmark-text strong { font-size: 51px; }
+  .footer-wordmark-text > span { font-size: 11px; }
+}

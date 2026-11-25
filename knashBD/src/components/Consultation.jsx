@@ -22,7 +22,7 @@ const initialDetails = {
 
 function enquiryText(details) {
   return [
-    'SOLAR CONSULTATION REQUEST — KNASHBD',
+    'SOLAR CONSULTATION REQUEST — KNASH ENGINEERING LIMITED',
     '',
     `Name: ${details.name.trim()}`,
     `Email: ${details.email.trim()}`,
@@ -33,7 +33,7 @@ function enquiryText(details) {
     'Project notes:',
     details.message.trim() || 'Please contact me to discuss my solar project.',
     '',
-    'Prepared using the KnashBD website. This is an enquiry draft, not a submitted order.',
+    'Prepared using the Knash Engineering Limited website. This is an enquiry draft, not a submitted order.',
   ].join('\n')
 }
 
@@ -110,7 +110,7 @@ export default function Consultation() {
               <span className="consult-orbit-tick consult-orbit-tick--d" />
             </div>
           </div>
-          <div className="consult-story-foot"><span>KNASHBD / BANGLADESH</span><span>FUTURE / IN PROGRESS</span></div>
+          <div className="consult-story-foot"><span>KNASH ENGINEERING LIMITED / BANGLADESH</span><span>FUTURE / IN PROGRESS</span></div>
         </div>
 
         <div className="consult-form-side" data-reveal>
@@ -180,7 +180,7 @@ export default function Consultation() {
               <strong>{contactEmail ? 'Your email draft is ready.' : 'Your enquiry draft is ready.'}</strong>
               <p>{contactEmail
                 ? 'Check your email app and press Send. Nothing has been submitted through this website.'
-                : 'An official KnashBD email address is not configured yet, so this site cannot send your request. You can copy the draft below.'}</p>
+                : 'An official Knash Engineering Limited email address is not configured yet, so this site cannot send your request. You can copy the draft below.'}</p>
               <label htmlFor="consult-draft-text">Enquiry details</label>
               <textarea id="consult-draft-text" ref={draftRef} readOnly value={draft} rows="7" />
               <button type="button" onClick={copyDraft}>{copied ? 'Copied to clipboard ✓' : 'Copy enquiry details'}</button>
