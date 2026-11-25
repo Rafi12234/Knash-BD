@@ -1,8 +1,8 @@
 # KnashBD — Editorial Solar Landing Page
 
-React 19 + Vite, developed one part at a time. This version includes the **navbar, cinematic hero, trust/approach strip, and About KnashBD**. Future service, project, testimonial, and contact sections are not fabricated.
+React 19 + Vite. A typography-led solar company prototype built section by section, with responsive design, cinematic visual storytelling, reduced-motion handling, and no paid component library.
 
-## Getting started
+## Run locally
 
 ```bash
 cd knashBD
@@ -10,48 +10,44 @@ npm ci
 npm run dev
 ```
 
-Build and lint checks:
+Production checks: `npm run lint` and `npm run build`.
 
-```bash
-npm run lint
-npm run build
-```
+## Page sections
 
-## Hero video (optional)
+1. Cinematic, muted, looping solar hero and glass navigation
+2. Trust & credibility / approach
+3. About KnashBD
+4. Solar solutions (residential, commercial, ground-mounted)
+5. Why Go Solar
+6. How We Work — installation process
+7. Featured Projects
+8. Stories & perspectives and prototype brand showcase
+9. Get a Solar Consultation — quotation enquiry draft
+10. Footer with navigation and back-to-top link
 
-The hero works with its bundled vector poster until you supply your own 10-second film. To activate the film:
+## Contact form setup — important before production
 
-1. Add your browser-compatible H.264 MP4 to `public/media/knash-solar-assembly.mp4`.
-2. Copy `.env.example` to `.env` in the `knashBD` folder.
-3. Set `VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4`.
-4. Restart the Vite server.
+The form in `src/components/Consultation.jsx` uses **no server, email API or customer database**. It validates required fields in the browser and composes a readable enquiry draft, including selected project type and location.
 
-The film **autoplays muted and loops**; it is not scrubbed by scroll. The capsule entrance reveal is independent of film playback.
+By default, no company address is known, so the button **Prepare my enquiry** displays a selectable and copyable draft. No personal details are automatically transmitted or stored.
 
-## Section design
+To enable pre-addressed email composition:
 
-- `src/components/TrustStrip.jsx`: a restrained three-part typographic approach statement, rather than unsupported customer counts or certification logos.
-- `src/components/About.jsx`: brand introduction paired with an original architectural solar-panel study. The study is clearly labeled conceptual, not a delivered project.
-- `src/components/useReveal.js` and `src/sections.css`: lightweight, one-time intersection reveals, reduced-motion handling, responsive editorial layout.
-- Navigation and hero CTA use real anchors for the new sections.
+1. Copy `.env.example` to `.env` in the `knashBD` folder.
+2. Set `VITE_CONTACT_EMAIL` to a **verified KnashBD company email**.
+3. Restart Vite and check the form in the browser.
+4. The form's button becomes **Compose enquiry email** and opens the visitor's mail application with the address, subject and body populated.
 
-**Content note:** Principle statements and About copy are positioning language, not claims of completed projects, warranties, years of experience, industry awards, or customer satisfaction. Replace with approved company facts when available.
+**Opening an email composer does not guarantee the email was sent.** For actual in-site submission, delivery confirmation, spam protection, logging and privacy controls, a backend or a supported form service must be implemented. Do not claim an enquiry was delivered without such a service.
 
-## Phase 04: Applications + Why Solar
+Never put credentials or private API tokens in `VITE_*` variables; these values are exposed to client browsers.
 
-The Solutions section contains three **illustrative application studies** (residential rooftops, commercial rooftops, and open-field arrays). Select a study to change the technical drawing and its narrative; the drawings are custom SVGs, not completed project photographs. The benefits section uses broad, factual explanations without invented ROI, energy-savings figures, or warranties.
+## Hero video
 
-The navbar is a compact liquid-glass capsule with backdrop blur, light-edge refraction, and a scroll-aware state. It now links to all implemented sections and supports a keyboard-accessible mobile menu. The background video continues to autoplay and loop independently of page scrolling.
+The supplied ambient clip is a placeholder. For your final fictional solar-assembly film, place a browser-compatible muted MP4 at `public/media/knash-solar-assembly.mp4` and set `VITE_HERO_VIDEO_URL=/media/knash-solar-assembly.mp4` in `.env`. The background autoplays muted and loops; it is **not** scroll-scrubbed. A static poster remains for reduced motion and video errors.
 
-Specific service availability, track record and product promises should be confirmed with KnashBD before publishing commercial claims.
+## Imagery, brands, testimonials
 
-## Photographic sections (Phase 05)
+Some images are generated concepts, not evidence of completed KnashBD installations. The project portfolio and stories are intentionally labeled as conceptual studies. Prototype logo references, if present, do **not** establish customer relationships or endorsements.
 
-The About section and the three Solar Solutions states now feature locally bundled, optimized WebP concept images instead of schematic SVG illustrations. The About image enters with a cinematic zoom; selecting a solar application smoothly cross-dissolves and reframes its photograph with an animated editorial caption. Images live in `public/media/` (no third-party runtime requests), are lazy-loaded, and preserve a reduced-motion experience. Generated concept photos are explicitly labeled and must not be represented as completed KnashBD client projects.
-
-
-## Phase 10: Stories & client logo carousel
-
-The new `src/components/SocialProof.jsx` uses an editorial photographic story carousel and a looping sector-name rail. **The concept scenes are explicitly marked as application studies, not actual testimonials or delivered projects.** No client endorsements, testimonial quotations, project numbers, or corporate relationships are invented.
-
-To publish real client logos and testimonials, update `src/data/socialProof.js` with **verified and approved** information. Put supplied, licensed logo assets under `public/media/clients/`; add client names, logo paths, and official URLs to `approvedClients`, and add customer-approved quotations with attribution and matching project images to `approvedTestimonials`. When these arrays are populated, the section switches to the verified content automatically. The logo rail pauses on hover/focus and honors reduced-motion preferences.
+Replace all promotional brand marks, project claims, company facts and testimonials with verified, approved materials before publishing. Verified client testimonials and marks can be configured in `src/data/socialProof.js`.

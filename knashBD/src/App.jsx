@@ -7,6 +7,8 @@ import Benefits from './components/Benefits'
 import Process from './components/Process'
 import Projects from './components/Projects'
 import SocialProof from './components/SocialProof'
+import Consultation from './components/Consultation'
+import Footer from './components/Footer'
 import './App.css'
 import './sections.css'
 import './phase4.css'
@@ -17,6 +19,7 @@ import './experience.css'
 import './projects.css'
 import './how-work-premium.css'
 import './social-proof.css'
+import './contact-footer.css'
 
 function App() {
   return (
@@ -32,7 +35,9 @@ function App() {
         <Process />
         <Projects />
         <SocialProof />
+        <Consultation />
       </main>
+      <Footer />
     </>
   )
 }

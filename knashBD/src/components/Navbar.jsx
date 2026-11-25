@@ -83,7 +83,7 @@ export default function Navbar() {
 
       <div className="header-actions">
         <span className="header-location"><span className="live-dot" />Designed in Bangladesh</span>
-        <a className="header-cta" href="#solutions" onClick={() => setMenuOpen(false)}>Discover <ArrowIcon diagonal /></a>
+        <a className="header-cta" href="#contact" onClick={() => setMenuOpen(false)}>Get a quote <ArrowIcon diagonal /></a>
         <button className={`menu-toggle ${menuOpen ? 'menu-toggle--open' : ''}`} type="button" aria-expanded={menuOpen} aria-controls="site-navigation" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen((open) => !open)}>
           <span /><span />
         </button>

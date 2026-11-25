@@ -1,0 +1,180 @@
+/* PHASE 11 — The final conversation: a spacious, editorial enquiry and closing identity. */
+.consult-section {
+  overflow: hidden;
+  scroll-margin-top: 86px;
+  background: #f9faf5;
+  padding: clamp(92px, 8vw, 144px) clamp(25px, 6.2vw, 106px) clamp(84px, 8vw, 140px);
+  color: #14281c;
+}
+.consult-overline { border-bottom-color: #cbd7c9; }
+.consult-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(58px, 8vw, 154px);
+  align-items: start;
+  padding-top: clamp(62px, 7vw, 120px);
+}
+.consult-story { position: relative; min-width: 0; }
+.consult-eyebrow {
+  display: flex; align-items: center; gap: 15px; margin: 0 0 clamp(37px, 4vw, 70px);
+  font-size: 10px; font-weight: 750; letter-spacing: .165em; color: #55775e;
+}
+.consult-eyebrow-line { width: 42px; height: 1px; background: #567b5d; }
+.consult-story h2 {
+  font-size: clamp(69px, 7.5vw, 134px);
+  font-weight: 750; letter-spacing: -.094em; line-height: .91;
+  margin: 0; text-wrap: balance;
+}
+.consult-story h2 em {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400; color: #658569; letter-spacing: -.086em;
+}
+.consult-story-bottom { display: grid; grid-template-columns: minmax(0, 1fr) minmax(115px, .55fr); gap: 14px; align-items: center; margin-top: clamp(72px, 9vw, 163px); }
+.consult-story-bottom > p { max-width: 320px; margin: 0; color: #5b6c60; font-size: clamp(16px, 1.35vw, 21px); line-height: 1.65; letter-spacing: -.03em; }
+.consult-orbit { position: relative; width: clamp(126px, 15vw, 215px); aspect-ratio: 1; justify-self: end; border: 1px solid rgba(89,131,99,.3); border-radius: 50%; }
+.consult-orbit::before { content: ''; position: absolute; inset: 24%; border: 1px solid rgba(91,142,102,.5); border-radius: 50%; }
+.consult-orbit-center { position: absolute; inset: 38%; border-radius: 50%; background: #dce8cf; box-shadow: 0 0 0 1px rgba(112,143,93,.35); }
+.consult-orbit-ring { position: absolute; border-radius: 50%; border: 1px dashed rgba(87,128,94,.38); }
+.consult-orbit-ring--one { inset: 13%; animation: consult-orbit-turn 32s linear infinite; }
+.consult-orbit-ring--two { inset: -10%; border-style: solid; opacity: .38; }
+.consult-orbit-tick { position: absolute; width: 26%; height: 1px; background: #a5b7a4; }
+.consult-orbit-tick--a { top: 50%; left: -14%; }
+.consult-orbit-tick--b { top: 50%; right: -14%; }
+.consult-orbit-tick--c { top: -14%; left: 50%; transform: rotate(90deg) translateX(-50%); transform-origin: left center; }
+.consult-orbit-tick--d { bottom: -14%; left: 50%; transform: rotate(90deg) translateX(-50%); transform-origin: left center; }
+.consult-story-foot { display: flex; justify-content: space-between; gap: 18px; padding-top: 25px; margin-top: clamp(70px, 9vw, 153px); border-top: 1px solid #cbd7c9; color: #7b8b7e; font-size: 9px; font-weight: 750; letter-spacing: .13em; }
+@keyframes consult-orbit-turn { to { transform: rotate(360deg); } }
+
+.consult-form-side { min-width: 0; padding-top: 3px; }
+.consult-form-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid #bfcfc0; padding-bottom: 20px; color: #4d7859; font-size: 10px; font-weight: 750; letter-spacing: .15em; }
+.consult-form-heading span:last-child { font-size: 21px; font-weight: 400; }
+.consult-form-side h3 { margin: clamp(27px, 3.2vw, 55px) 0 17px; font-size: clamp(43px, 4.4vw, 78px); line-height: 1.04; font-weight: 700; letter-spacing: -.073em; }
+.consult-form-side h3 em { color: #638368; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+.consult-form-lead { margin: 0 0 clamp(43px, 4vw, 69px); max-width: 345px; color: #66796a; line-height: 1.7; font-size: 14px; }
+.consult-form { width: 100%; }
+.consult-project-types { margin: 0 0 clamp(32px, 3vw, 52px); padding: 0; border: 0; }
+.consult-project-types legend { padding: 0; margin-bottom: 17px; color: #557260; font-size: 10px; font-weight: 750; letter-spacing: .10em; }
+.consult-type-list { display: flex; flex-wrap: wrap; gap: 9px; }
+.consult-type { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; background: transparent; color: #5f7364; border: 1px solid #cad6ca; border-radius: 100px; cursor: pointer; font-size: 11px; font-weight: 640; transition: border-color .3s ease, background .35s ease, color .35s ease, transform .35s ease; }
+.consult-type:hover { border-color: #588363; color: #244530; transform: translateY(-2px); }
+.consult-type--active { color: #f8faf6; background: #294e36; border-color: #294e36; }
+.consult-type--active:hover { color: #fff; }
+.consult-type-index { font-family: Georgia, serif; font-style: italic; font-size: 10px; opacity: .65; }
+.consult-fields { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(17px, 2.4vw, 36px); row-gap: clamp(26px, 2.9vw, 43px); }
+.consult-field { display: flex; flex-direction: column; min-width: 0; gap: 11px; }
+.consult-field > span { font-size: 10px; font-weight: 750; color: #3b5b43; letter-spacing: .11em; }
+.consult-field > span b { color: #689b72; }
+.consult-field > span small { font-size: 10px; font-weight: 450; letter-spacing: 0; color: #829182; }
+.consult-field input, .consult-field textarea {
+  display: block; width: 100%; min-width: 0;
+  background: transparent; border: 0; border-bottom: 1px solid #bccbbd;
+  border-radius: 0; padding: 6px 0 14px;
+  color: #1a2f22; font: inherit; font-size: 14px; line-height: 1.5;
+  transition: border-color .3s ease;
+}
+.consult-field input::placeholder, .consult-field textarea::placeholder { color: #8b998e; opacity: 1; }
+.consult-field input:focus, .consult-field textarea:focus { outline: 0; border-bottom: 2px solid #3c7050; padding-bottom: 13px; }
+.consult-field textarea { min-height: 98px; resize: vertical; }
+.consult-field--wide { grid-column: 1 / -1; }
+.consult-submit-row { display: flex; align-items: center; flex-wrap: wrap; column-gap: 25px; row-gap: 17px; margin-top: clamp(35px, 4vw, 67px); }
+.consult-submit { display: inline-flex; align-items: center; justify-content: space-between; min-width: 244px; min-height: 61px; gap: 16px; padding: 8px 9px 8px 23px; border: 1px solid #264532; border-radius: 100px; background: #1a3a29; color: #f9fbf6; font-weight: 680; font-size: 12px; cursor: pointer; transition: background .4s ease, transform .4s cubic-bezier(.19,1,.22,1), box-shadow .4s ease; }
+.consult-submit:hover { background: #336a44; transform: translateY(-3px); box-shadow: 0 17px 30px -21px rgba(10,46,24,.55); }
+.consult-submit-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: #d9ebce; color: #183b26; }
+.consult-submit-icon svg { width: 19px; height: 19px; transition: transform .4s ease; }
+.consult-submit:hover svg { transform: translate(2px, -2px); }
+.consult-submit-row > p { max-width: 255px; font-size: 10px; color: #7c8b7d; line-height: 1.65; margin: 0; }
+.consult-draft { margin-top: 34px; border-top: 1px solid #c9d8ca; padding-top: 22px; animation: consult-draft-enter .6s cubic-bezier(.19,1,.22,1) both; }
+.consult-draft strong { font-size: 16px; }
+.consult-draft p { font-size: 12px; line-height: 1.7; color: #5a6c5e; }
+.consult-draft label { font-size: 11px; font-weight: 700; color: #34573e; }
+.consult-draft textarea { display: block; width: 100%; margin-top: 9px; padding: 15px; border: 1px solid #bacfba; background: #eff4eb; color: #24402e; font-size: 12px; line-height: 1.5; resize: vertical; }
+.consult-draft button { margin-top: 13px; padding: 10px 17px; border-radius: 100px; border: 1px solid #75967b; background: transparent; color: #244b2f; cursor: pointer; }
+@keyframes consult-draft-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+.knash-footer { position: relative; scroll-margin-top: 70px; overflow: hidden; padding: clamp(70px, 7vw, 117px) clamp(25px, 6.2vw, 106px) 23px; color: #eff6ed; background: #142d21; isolation: isolate; }
+.knash-footer::before { content: ''; position: absolute; z-index: -1; pointer-events: none; inset: 0; background: radial-gradient(ellipse at 100% 0%,rgba(176,211,159,.1),transparent 54%), repeating-radial-gradient(ellipse at 5% 90%, transparent 0, transparent 55px, rgba(170,218,168,.034) 57px, transparent 59px); }
+.footer-opening { display: grid; grid-template-columns: minmax(0, 1fr) auto; border-bottom: 1px solid rgba(213,233,204,.22); padding-bottom: clamp(54px, 6vw, 104px); }
+.footer-opening-label { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; margin-bottom: 47px; color: #b7cdb4; font-size: 10px; letter-spacing: .16em; font-weight: 730; }
+.footer-dot { width: 7px; height: 7px; border-radius: 50%; background: #b3d8a3; box-shadow: 0 0 0 5px rgba(170,211,151,.08); }
+.footer-opening p { margin: 0; font-size: clamp(46px, 6.6vw, 112px); font-weight: 620; line-height: .99; letter-spacing: -.077em; }
+.footer-opening p em { color: #a5c49c; font: italic 400 1em Georgia, 'Times New Roman', serif; letter-spacing: -.071em; }
+.footer-contact-arrow { display: grid; place-items: center; width: clamp(75px, 10vw, 163px); height: clamp(75px, 10vw, 163px); align-self: end; justify-self: end; margin-left: 20px; border-radius: 50%; border: 1px solid rgba(222,246,213,.55); font-size: clamp(38px, 4.9vw, 75px); font-weight: 300; transition: background .5s ease, color .5s ease, transform .5s cubic-bezier(.19,1,.22,1); }
+.footer-contact-arrow:hover { background: #d7efcd; color: #1a3927; transform: rotate(45deg); }
+.footer-middle { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(130px, .8fr) minmax(170px, .8fr); gap: clamp(28px, 5.2vw, 95px); padding: clamp(56px, 5.8vw, 94px) 0 clamp(75px, 8vw, 130px); }
+.footer-small-brand { display: inline-flex; align-items: center; gap: 12px; font-size: 27px; font-weight: 800; letter-spacing: -.075em; }
+.footer-small-brand sup { font-size: 10px; letter-spacing: 0; vertical-align: top; }
+.footer-small-brand b { color: #9acb85; }
+.footer-brand-symbol { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; width: 27px; height: 27px; transform: rotate(-10deg); }
+.footer-brand-symbol i { background: #d4eed0; border-radius: 1px; }
+.footer-brand-symbol i:nth-child(2), .footer-brand-symbol i:nth-child(3) { background: #8cbb8c; }
+.footer-manifesto p { max-width: 270px; font-size: 14px; line-height: 1.74; color: #b6c8b7; margin: 28px 0 43px; }
+.footer-location { color: #a5bdaa; font-size: 9px; letter-spacing: .15em; font-weight: 700; }
+.footer-location span { font-size: 16px; margin-left: 11px; }
+.footer-link-group { display: flex; flex-direction: column; align-items: start; gap: 16px; }
+.footer-link-group h2 { margin: 6px 0 15px; color: #91b69a; font-size: 10px; font-weight: 750; text-transform: uppercase; letter-spacing: .18em; }
+.footer-link-group a { font-size: 13px; color: #dce8db; font-weight: 500; transition: color .25s ease, transform .35s ease; }
+.footer-link-group a:hover { color: #b8e7a6; transform: translateX(4px); }
+.footer-link-group a span { font-size: 13px; margin-left: 8px; color: #91ae97; }
+.footer-wordmark { display: flex; align-items: baseline; overflow: hidden; margin-left: -.065em; font-size: clamp(100px, 20.3vw, 345px); line-height: .75; letter-spacing: -.104em; font-weight: 800; white-space: nowrap; color: #dae9d5; user-select: none; }
+.footer-wordmark-bd { align-self: start; margin: .03em 0 0 .18em; font-size: .19em; line-height: .9; letter-spacing: -.05em; }
+.footer-wordmark-dot { color: #a7d294; }
+.footer-bottom { border-top: 1px solid rgba(207,233,197,.24); padding-top: 24px; margin-top: clamp(35px, 4vw, 65px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 17px; color: #a9bda9; font-size: 9px; font-weight: 700; letter-spacing: .095em; line-height: 1.6; }
+.footer-bottom a { color: #eef8e9; white-space: nowrap; }
+.footer-bottom a span { font-size: 16px; margin-left: 12px; }
+
+@media (max-width: 1180px) {
+  .consult-layout { gap: 45px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .consult-story h2 { font-size: clamp(65px, 7.3vw, 105px); }
+  .consult-fields { gap: 26px 17px; }
+  .footer-middle { grid-template-columns: minmax(0, 1.65fr) minmax(135px, 1fr) minmax(160px, 1fr); }
+}
+@media (max-width: 850px) {
+  .consult-section { padding: 86px 28px 90px; }
+  .consult-layout { grid-template-columns: 1fr; gap: 70px; padding-top: 64px; }
+  .consult-story h2 { font-size: clamp(74px, 11vw, 120px); }
+  .consult-story-bottom { margin-top: 60px; }
+  .consult-orbit { width: 170px; }
+  .consult-story-foot { margin-top: 56px; }
+  .consult-form-side { max-width: 680px; width: 100%; }
+  .consult-form-side h3 { font-size: clamp(56px, 8vw, 78px); }
+  .consult-fields { column-gap: 28px; }
+  .knash-footer { padding: 76px 28px 22px; }
+  .footer-opening-label { margin-bottom: 33px; }
+  .footer-middle { grid-template-columns: minmax(0, 1fr) 1fr 1fr; }
+}
+@media (max-width: 580px) {
+  .consult-section { padding: 74px 21px 78px; }
+  .consult-layout { padding-top: 52px; gap: 58px; }
+  .consult-story h2 { font-size: clamp(57px, 12.3vw, 76px); }
+  .consult-eyebrow { font-size: 8px; margin-bottom: 38px; }
+  .consult-story-bottom { margin-top: 43px; grid-template-columns: minmax(0, 1fr) 110px; }
+  .consult-story-bottom > p { font-size: 14px; }
+  .consult-orbit { width: 104px; }
+  .consult-story-foot { font-size: 8px; margin-top: 43px; }
+  .consult-form-side h3 { font-size: clamp(48px, 10.5vw, 66px); margin-top: 28px; }
+  .consult-form-lead { margin-bottom: 40px; }
+  .consult-fields { grid-template-columns: 1fr; gap: 26px; }
+  .consult-field--wide { grid-column: auto; }
+  .consult-submit { min-width: min(100%, 290px); }
+  .knash-footer { padding: 67px 21px 20px; }
+  .footer-opening { grid-template-columns: 1fr auto; gap: 15px; }
+  .footer-opening p { font-size: clamp(41px, 10.5vw, 62px); }
+  .footer-contact-arrow { width: 60px; height: 60px; font-size: 37px; margin: 0 0 2px; }
+  .footer-middle { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 19px; padding-top: 54px; }
+  .footer-manifesto { grid-column: 1 / -1; }
+  .footer-manifesto p { margin: 22px 0 26px; }
+  .footer-link-group { gap: 16px; }
+  .footer-wordmark { font-size: 23.5vw; }
+  .footer-bottom { align-items: start; flex-direction: column; gap: 10px; margin-top: 25px; font-size: 8px; }
+}
+@media (max-width: 380px) {
+  .consult-type-list { gap: 7px; }
+  .consult-type { padding-inline: 10px; font-size: 10px; }
+  .footer-opening p { font-size: 38px; }
+  .footer-contact-arrow { width: 52px; height: 52px; font-size: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consult-orbit-ring--one { animation: none !important; }
+  .consult-type, .consult-submit, .consult-submit-icon svg, .footer-contact-arrow, .footer-link-group a { transition: none !important; }
+  .consult-draft { animation: none !important; }
+}
