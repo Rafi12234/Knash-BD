@@ -40,3 +40,112 @@
   .footer-wordmark-text strong { font-size: 51px; }
   .footer-wordmark-text > span { font-size: 11px; }
 }
+
+
+/* NAVBAR WIDTH FIX — KEL's longer identity requires a wider collapse threshold.
+   Keep the quote action inside the glass, including its compact scrolled state. */
+.site-header.site-header--refined {
+  column-gap: clamp(10px, 1.1vw, 17px);
+}
+.site-header--refined .site-nav {
+  flex: 0 1 auto;
+  min-width: 0;
+  gap: clamp(8px, .76vw, 13px);
+  padding-left: 0;
+}
+.site-header--refined .site-nav a {
+  gap: 4px;
+  font-size: 10px;
+}
+.site-header--refined .site-nav .nav-index {
+  font-size: 8px;
+}
+.site-header--refined .header-location {
+  display: none;
+}
+.site-header--refined .header-actions {
+  flex: 0 0 auto;
+  margin-left: auto;
+  gap: 10px;
+}
+.site-header--refined .header-cta {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  gap: 11px;
+  padding: 0 12px 0 15px;
+  line-height: 1;
+}
+.site-header--refined .header-cta svg {
+  flex: 0 0 17px;
+}
+
+/* Collapse before the navigation crowds the quote CTA. */
+@media (max-width: 1499px) {
+  .site-header--refined .site-nav {
+    position: absolute;
+    z-index: 25;
+    display: none;
+    top: calc(100% + 9px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: calc(100svh - 110px);
+    overflow-y: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 6px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, .78);
+    border-radius: 19px;
+    background: rgba(250, 253, 249, .93);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+    backdrop-filter: blur(30px) saturate(150%);
+    box-shadow: 0 18px 40px -23px rgba(3, 24, 12, .3);
+  }
+  .site-header--refined .site-nav--open {
+    display: grid;
+  }
+  .site-header--refined .site-nav a {
+    min-width: 0;
+    padding: 13px 12px;
+    font-size: 14px;
+    gap: 9px;
+  }
+  .site-header--refined .site-nav .nav-index {
+    font-size: 10px;
+  }
+  .site-header--refined .site-nav a::after {
+    bottom: 5px;
+    left: 12px;
+  }
+  .site-header--refined .menu-toggle {
+    display: flex;
+    flex: 0 0 40px;
+  }
+}
+@media (max-width: 900px) {
+  .site-header--refined .site-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .site-header--refined .site-nav {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+    padding: 12px;
+  }
+  .site-header--refined .site-nav a {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .site-header--refined .header-cta {
+    gap: 7px;
+    padding: 0 9px 0 12px;
+  }
+}
+@media (max-width: 460px) {
+  /* The supplied logo already contains the KEL lettering at this size. */
+  .site-header--refined .brand-legal-name {
+    display: none;
+  }
+}
