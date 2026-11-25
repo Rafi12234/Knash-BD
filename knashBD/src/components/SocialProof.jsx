@@ -1,46 +1,42 @@
 import { useEffect, useRef, useState } from 'react'
 import useReveal from './useReveal'
-import { approvedClients, approvedTestimonials } from '../data/socialProof'
+import { approvedClients, approvedTestimonials, prototypeBrands } from '../data/socialProof'
 
 // Until client-owned proof is approved, show explicitly labeled application studies.
 // These scenes are NOT customer reviews or completed KnashBD case studies.
 const concepts = [
   {
-    id: 'living', number: '01', category: 'RESIDENTIAL / APPLICATION STUDY',
-    title: 'A home with more in mind.',
-    description: 'Imagine a rooftop becoming an active part of everyday living. The right solar approach begins with the people and space it serves.',
-    image: '/media/portfolio-residential.webp',
-    alt: 'Concept photograph of a contemporary solar-powered home among trees',
+    id: 'living', number: '01', category: 'URBAN ROOFTOP / APPLICATION STUDY',
+    title: 'The city roof, reimagined.',
+    description: 'In a dense urban setting, one overlooked rooftop can become a practical place to generate clean energy close to home.',
+    image: '/media/story-urban-rooftop.webp',
+    alt: 'Generated visual of a multi-storey Bangladeshi urban apartment rooftop with a solar-panel array',
     footing: 'LIVING SPACES',
   },
   {
     id: 'enterprise', number: '02', category: 'COMMERCIAL / APPLICATION STUDY',
-    title: 'New purpose for every roof.',
-    description: 'Across commercial spaces, available rooftop area can offer an opportunity to generate electricity close to where it is used.',
-    image: '/media/portfolio-commercial.webp',
-    alt: 'Concept photograph of solar panels on a large commercial building',
+    title: 'Working roofs. New potential.',
+    description: 'A broad industrial rooftop invites a different perspective on energy use, building performance and considered long-term planning.',
+    image: '/media/story-industrial-factory.webp',
+    alt: 'Generated architectural image of a solar-equipped industrial factory with loading bays and glass-fronted offices',
     footing: 'WORKING SPACES',
   },
   {
     id: 'landscape', number: '03', category: 'GROUND-MOUNT / APPLICATION STUDY',
-    title: 'A landscape of possibility.',
-    description: 'Carefully planned ground-mounted arrays turn the conversation toward land, light, environmental conditions, and long-term needs.',
-    image: '/media/portfolio-ground.webp',
-    alt: 'Concept photograph of an organized ground-mounted solar array in a green landscape',
+    title: 'Light across the landscape.',
+    description: 'A large ground-mounted array is shaped by sunlight, available land, local conditions and the needs of the place it serves.',
+    image: '/media/story-open-solar-field.webp',
+    alt: 'Generated scene of broad photovoltaic arrays in open agricultural countryside at sunrise',
     footing: 'OPEN LANDSCAPES',
   },
   {
     id: 'community', number: '04', category: 'SHARED SPACES / APPLICATION STUDY',
-    title: 'Better energy, shared places.',
-    description: 'Solar can be considered wherever people learn, gather, or work together — with system choices tailored to each environment.',
-    image: '/media/portfolio-community.webp',
-    alt: 'Concept photograph of a solar-ready educational or community campus',
+    title: 'Shared spaces, shared possibility.',
+    description: 'From public buildings to learning spaces, solar can become part of everyday architecture without interrupting how people use it.',
+    image: '/media/story-solar-campus.webp',
+    alt: 'Generated view of a sunny institutional courtyard with a photovoltaic canopy and building-mounted panels',
     footing: 'COMMUNITY SPACES',
   },
-]
-
-const sectors = [
-  'RESIDENTIAL', 'WORKPLACES', 'EDUCATION', 'INDUSTRY', 'OPEN LAND', 'COMMUNITIES',
 ]
 
 function Arrow({ direction }) {
@@ -115,7 +111,7 @@ export default function SocialProof() {
           ))}
           <span className="proof-picture-shade" aria-hidden="true" />
           <div className="proof-picture-corners" aria-hidden="true" />
-          <div className="proof-picture-top" aria-hidden="true"><span>KNASHBD / IN PERSPECTIVE</span><span>{current.number || String(active + 1).padStart(2, '0')} — {String(stories.length).padStart(2, '0')}</span></div>
+          <div className="proof-picture-top" aria-hidden="true"><span>KNASHBD / CONCEPT VISUALS</span><span>{current.number || String(active + 1).padStart(2, '0')} — {String(stories.length).padStart(2, '0')}</span></div>
           <div className="proof-picture-bottom" aria-hidden="true"><span>{current.footing || current.category}</span><span>↗</span></div>
         </div>
 
@@ -146,8 +142,8 @@ export default function SocialProof() {
       </div>
 
       <div className="proof-client-rail" data-reveal>
-        <div className="proof-rail-meta"><span className="proof-rail-dash" />{hasClients ? 'OUR VERIFIED CLIENTS' : 'PLACES SOLAR CAN SERVE'}</div>
-        <div className="proof-logo-viewport" aria-label={hasClients ? 'Verified client logos' : 'Types of spaces, not client logos'}>
+        <div className="proof-rail-meta"><span className="proof-rail-dash" />{hasClients ? 'OUR VERIFIED CLIENTS' : '15 BRAND REFERENCES / FRONTEND DEMO'}</div>
+        <div className="proof-logo-viewport" aria-label={hasClients ? 'Verified client logos' : '15 illustrative brand logo references for a frontend prototype; none are KnashBD clients'}>
           <div className="proof-logo-track">
             {[0, 1].map((copy) => (
               <div key={copy} className="proof-logo-set" aria-hidden={copy === 1}>
@@ -156,14 +152,26 @@ export default function SocialProof() {
                     className="proof-client-mark" tabIndex={copy === 1 ? -1 : undefined} aria-label={`Client: ${client.name}`}>
                     <img src={client.logo} alt={client.name} loading="lazy" decoding="async" />
                   </a>
-                )) : sectors.map((sector, index) => (
-                  <span key={sector} className="proof-sector-mark"><span className="proof-sector-symbol" aria-hidden="true">{['◌', '⌁', '◇', '✳', '⊙', '⊹'][index]}</span>{sector}</span>
+                )) : prototypeBrands.map((brand) => (
+                  <div key={brand.name} className="proof-demo-brand" role="img"
+                    aria-label={brand.name + ' — demo brand reference only, not a KnashBD client'}>
+                    <span className="proof-demo-icon" aria-hidden="true">
+                      <span className="proof-demo-monogram">{brand.monogram}</span>
+                      <img src={`https://www.google.com/s2/favicons?domain=${brand.domain}&sz=128`}
+                        alt="" loading="lazy" width="42" height="42"
+                        onError={(event) => { event.currentTarget.style.display = 'none' }} />
+                    </span>
+                    <span className="proof-demo-brand-copy">
+                      <span className="proof-demo-wordmark">{brand.name}</span>
+                      <span className="proof-demo-origin">{brand.market} · BRAND EXAMPLE</span>
+                    </span>
+                  </div>
                 ))}
               </div>
             ))}
           </div>
         </div>
-        <p className="proof-verification-note">{hasClients ? 'Client marks displayed with permission.' : 'Sector names are illustrative, not client identities. Verified logos and attributed testimonials can be added after approval.'}</p>
+        <p className="proof-verification-note">{hasClients ? 'Client marks displayed with permission.' : 'Prototype brand references only. These brands are NOT KnashBD customers, partners, sponsors or endorsers. Replace with authorized client logos before publishing.'}</p>
       </div>
       <div className="proof-endnote" data-reveal><span>PEOPLE FIRST. DETAILS MATTER.</span><a href="#projects">RETURN TO PROJECT STUDIES <span aria-hidden="true">↗</span></a></div>
     </section>
