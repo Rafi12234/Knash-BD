@@ -79,8 +79,8 @@
   flex: 0 0 17px;
 }
 
-/* Collapse before the navigation crowds the quote CTA. */
-@media (max-width: 1499px) {
+/* Use the collapsible menu only when the centered desktop navigation cannot fit. */
+@media (max-width: 1279px) {
   .site-header--refined .site-nav {
     position: absolute;
     z-index: 25;
@@ -147,5 +147,52 @@
   /* The supplied logo already contains the KEL lettering at this size. */
   .site-header--refined .brand-legal-name {
     display: none;
+  }
+}
+
+/* CENTERED DESKTOP NAVIGATION
+   Equal outer grid tracks keep the links visually centered in the entire
+   glass capsule, regardless of the different logo and CTA widths. */
+@media (min-width: 1280px) {
+  .site-header.site-header--refined {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: clamp(12px, 1.1vw, 18px);
+  }
+
+  .site-header--refined .brand {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .site-header--refined .site-nav {
+    grid-column: 2;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: initial;
+    min-width: 0;
+    padding-left: 0;
+    gap: clamp(13px, 1.02vw, 19px);
+  }
+
+  .site-header--refined .site-nav a {
+    font-size: 13px;
+    font-weight: 650;
+    letter-spacing: -.012em;
+    gap: 5px;
+    line-height: 1.35;
+  }
+
+  .site-header--refined .site-nav .nav-index {
+    font-size: 9px;
+  }
+
+  .site-header--refined .header-actions {
+    grid-column: 3;
+    justify-self: end;
+    margin-left: 0;
   }
 }
