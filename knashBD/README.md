@@ -48,3 +48,10 @@ Specific service availability, track record and product promises should be confi
 ## Photographic sections (Phase 05)
 
 The About section and the three Solar Solutions states now feature locally bundled, optimized WebP concept images instead of schematic SVG illustrations. The About image enters with a cinematic zoom; selecting a solar application smoothly cross-dissolves and reframes its photograph with an animated editorial caption. Images live in `public/media/` (no third-party runtime requests), are lazy-loaded, and preserve a reduced-motion experience. Generated concept photos are explicitly labeled and must not be represented as completed KnashBD client projects.
+
+
+## Phase 10: Stories & client logo carousel
+
+The new `src/components/SocialProof.jsx` uses an editorial photographic story carousel and a looping sector-name rail. **The concept scenes are explicitly marked as application studies, not actual testimonials or delivered projects.** No client endorsements, testimonial quotations, project numbers, or corporate relationships are invented.
+
+To publish real client logos and testimonials, update `src/data/socialProof.js` with **verified and approved** information. Put supplied, licensed logo assets under `public/media/clients/`; add client names, logo paths, and official URLs to `approvedClients`, and add customer-approved quotations with attribution and matching project images to `approvedTestimonials`. When these arrays are populated, the section switches to the verified content automatically. The logo rail pauses on hover/focus and honors reduced-motion preferences.
