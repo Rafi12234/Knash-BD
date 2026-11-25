@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="footer-manifesto" data-reveal>
           <a href="#home" className="footer-small-brand" aria-label="Knash Engineering Limited, back to the top">
             <img src="/kel-logo-dark.svg" className="footer-kel-logo" alt="" width="1242" height="937" loading="lazy" />
-            <span className="footer-brand-legal"><strong>KNASH</strong><span>ENGINEERING LIMITED</span></span>
+            <span className="footer-brand-legal">KNASH ENGINEERING LIMITED</span>
           </a>
           <p>A considered approach to solar for the spaces we live in, work in, and share.</p>
           <span className="footer-location">BASED IN BANGLADESH <span aria-hidden="true">↗</span></span>
@@ -47,11 +47,6 @@ export default function Footer() {
             ))}
           </nav>
         ))}
-      </div>
-
-      <div className="footer-wordmark" data-reveal aria-label="Knash Engineering Limited">
-        <span className="footer-wordmark-symbol" aria-hidden="true"><img src="/kel-symbol.svg" alt="" loading="lazy" /></span>
-        <span className="footer-wordmark-text"><strong>KNASH</strong><span>ENGINEERING LIMITED</span></span>
       </div>
 
       <div className="footer-bottom">
