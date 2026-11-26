@@ -69,7 +69,7 @@ export default function Projects() {
               <button type="button" className="projects-pane-surface"
                 ref={(element) => { buttonsRef.current[index] = element }}
                 aria-pressed={selected}
-                aria-label={study.number + ' ' + study.short + '. ' + study.headline + ' ' + study.description + ' Concept image, not a completed Knash Engineering Limited project.'}
+                aria-label={study.number + ' ' + study.short + '. ' + study.headline + ' ' + study.description + ' Concept image, not a completed Knash Engineers Limited project.'}
                 onFocus={() => setActive(index)}
                 onClick={() => setActive(index)}
                 onKeyDown={(event) => handleKeys(event, index)}>
@@ -77,7 +77,7 @@ export default function Projects() {
                   loading="lazy" decoding="async" />
                 <span className="projects-pane-shade" aria-hidden="true" />
                 <span className="projects-pane-top" aria-hidden="true">
-                  <span>KNASH ENGINEERING LIMITED / VISION {study.number}</span><span>+</span>
+                  <span>KNASH ENGINEERS LIMITED / VISION {study.number}</span><span>+</span>
                 </span>
                 <span className="projects-pane-headline" aria-hidden="true">{study.headline}</span>
                 <span className="projects-pane-bottom" aria-hidden="true">
@@ -98,7 +98,7 @@ export default function Projects() {
         })}
       </div>
       <div className="projects-endnote" data-reveal>
-        <span>GENERATED CONCEPTS / NOT COMPLETED KNASH ENGINEERING LIMITED PROJECTS</span>
+        <span>GENERATED CONCEPTS / NOT COMPLETED KNASH ENGINEERS LIMITED PROJECTS</span>
         <span className="projects-endnote-line" aria-hidden="true" />
         <a href="#process">EXPLORE OUR PROCESS <span aria-hidden="true">↗</span></a>
       </div>

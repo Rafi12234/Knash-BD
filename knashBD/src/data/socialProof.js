@@ -1,5 +1,5 @@
 /**
- * Publish real logos or endorsements only after Knash Engineering Limited has confirmed the
+ * Publish real logos or endorsements only after Knash Engineers Limited has confirmed the
  * customer relationship, permission to display the mark, and exact quotation.
  * Empty arrays intentionally produce an honest editorial placeholder.
  */

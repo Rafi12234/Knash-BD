@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import useReveal from './useReveal'
 
-// Photographic concept studies. These images are not photos of Knash Engineering Limited client projects.
+// Photographic concept studies. These images are not photos of Knash Engineers Limited client projects.
 const applications = [
   {
     id: 'residential',
@@ -113,12 +113,12 @@ export default function Solutions() {
           </figcaption>
           <span className="visually-hidden" aria-live="polite" aria-atomic="true">
             {selected.title} solar: {selected.subtitle} {selected.details}
-            This is a generated concept image, not a completed Knash Engineering Limited project.
+            This is a generated concept image, not a completed Knash Engineers Limited project.
           </span>
         </figure>
       </div>
       <div className="solutions-endnote" data-reveal>
-        <span>GENERATED CONCEPT IMAGERY — NOT COMPLETED KNASH ENGINEERING LIMITED PROJECTS</span>
+        <span>GENERATED CONCEPT IMAGERY — NOT COMPLETED KNASH ENGINEERS LIMITED PROJECTS</span>
         <a href="#benefits">WHY CONSIDER SOLAR? <span aria-hidden="true">↗</span></a>
       </div>
     </section>

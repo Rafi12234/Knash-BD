@@ -68,7 +68,7 @@ export default function Navbar() {
   return (
     <header className={`site-header site-header--refined ${scrolled ? 'site-header--scrolled' : ''} ${menuOpen ? 'site-header--menu-open' : ''}`}>
       <span className="glass-sheen" aria-hidden="true" />
-      <a className="brand" href="#home" aria-label="Knash Engineering Limited — home" onClick={() => setMenuOpen(false)}>
+      <a className="brand" href="#home" aria-label="Knash Engineers Limited — home" onClick={() => setMenuOpen(false)}>
         <img src="/kel-logo-standard.svg" className="brand-kel-logo" alt="" width="1242" height="937" />
         <span className="brand-legal-name"><strong>KNASH</strong><span>ENGINEERING LIMITED</span></span>
       </a>

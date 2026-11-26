@@ -3,7 +3,7 @@ import useReveal from './useReveal'
 const footerLinks = [
   { title: 'Explore', links: [
     ['Our approach', '#approach'],
-    ['About Knash Engineering Limited', '#about'],
+    ['About Knash Engineers Limited', '#about'],
     ['Solar solutions', '#solutions'],
     ['Why solar', '#benefits'],
   ] },
@@ -20,7 +20,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="knash-footer" id="footer" ref={sectionRef} aria-label="Knash Engineering Limited footer">
+    <footer className="knash-footer" id="footer" ref={sectionRef} aria-label="Knash Engineers Limited footer">
       <div className="footer-opening" data-reveal>
         <div className="footer-opening-label"><span className="footer-dot" /> ONE BRIGHTER PERSPECTIVE</div>
         <p>The best way to shape<br />tomorrow is to <em>start today.</em></p>
@@ -31,9 +31,9 @@ export default function Footer() {
 
       <div className="footer-middle">
         <div className="footer-manifesto" data-reveal>
-          <a href="#home" className="footer-small-brand" aria-label="Knash Engineering Limited, back to the top">
+          <a href="#home" className="footer-small-brand" aria-label="Knash Engineers Limited, back to the top">
             <img src="/kel-logo-dark.svg" className="footer-kel-logo" alt="" width="1242" height="937" loading="lazy" />
-            <span className="footer-brand-legal">KNASH ENGINEERING LIMITED</span>
+            <span className="footer-brand-legal">KNASH ENGINEERS LIMITED</span>
           </a>
           <p>A considered approach to solar for the spaces we live in, work in, and share.</p>
           <span className="footer-location">BASED IN BANGLADESH <span aria-hidden="true">↗</span></span>
@@ -50,7 +50,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>© {year} KNASH ENGINEERING LIMITED. ALL RIGHTS RESERVED.</span>
+        <span>© {year} KNASH ENGINEERS LIMITED. ALL RIGHTS RESERVED.</span>
         <span>CONCEPT IMAGERY & DEMONSTRATION CONTENT MAY APPEAR ON THIS SITE.</span>
         <a href="#home">BACK TO TOP <span aria-hidden="true">↑</span></a>
       </div>

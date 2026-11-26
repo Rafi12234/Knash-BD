@@ -106,7 +106,7 @@ export default function About() {
 
       <div className="about-cinematic__content">
         <div className="about-cinematic__top about-cinematic__enter" style={{ '--about-delay': '70ms' }}>
-          <span className="about-cinematic__label">KNASH ENGINEERING LIMITED <span aria-hidden="true">/</span> ABOUT US</span>
+          <span className="about-cinematic__label">KNASH ENGINEERS LIMITED <span aria-hidden="true">/</span> ABOUT US</span>
           <span className="about-cinematic__top-right"><span className="about-cinematic__top-rule" aria-hidden="true" /> A DIFFERENT PERSPECTIVE ON POWER</span>
         </div>
 
@@ -119,10 +119,10 @@ export default function About() {
           </div>
 
           <div className="about-cinematic__story" id="about-story">
-            <span className="about-cinematic__eyebrow about-cinematic__enter" style={{ '--about-delay': '310ms' }}>ABOUT KNASH ENGINEERING LIMITED</span>
+            <span className="about-cinematic__eyebrow about-cinematic__enter" style={{ '--about-delay': '310ms' }}>ABOUT KNASH ENGINEERS LIMITED</span>
             <h3 className="about-cinematic__enter" style={{ '--about-delay': '370ms' }}>Nice to meet <em>you!</em></h3>
             <p className="about-cinematic__enter" style={{ '--about-delay': '465ms' }}>
-              Knash Engineering Limited brings a thoughtful approach to solar energy for homes, businesses, and open spaces.
+              Knash Engineers Limited brings a thoughtful approach to solar energy for homes, businesses, and open spaces.
               We believe practical design and a long-term perspective can make the transition to
               cleaner energy clearer, more accessible, and more rewarding.
             </p>

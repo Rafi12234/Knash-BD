@@ -1,4 +1,4 @@
-# Knash Engineering Limited — Editorial Solar Landing Page
+# Knash Engineers Limited — Editorial Solar Landing Page
 
 React 19 + Vite. A typography-led solar company prototype built section by section, with responsive design, cinematic visual storytelling, reduced-motion handling, and no paid component library.
 
@@ -16,7 +16,7 @@ Production checks: `npm run lint` and `npm run build`.
 
 1. Cinematic, muted, looping solar hero and glass navigation
 2. Trust & credibility / approach
-3. About Knash Engineering Limited
+3. About Knash Engineers Limited
 4. Solar solutions (residential, commercial, ground-mounted)
 5. Why Go Solar
 6. How We Work — installation process
@@ -34,7 +34,7 @@ By default, no company address is known, so the button **Prepare my enquiry** di
 To enable pre-addressed email composition:
 
 1. Copy `.env.example` to `.env` in the `knashBD` folder.
-2. Set `VITE_CONTACT_EMAIL` to a **verified Knash Engineering Limited company email**.
+2. Set `VITE_CONTACT_EMAIL` to a **verified Knash Engineers Limited company email**.
 3. Restart Vite and check the form in the browser.
 4. The form's button becomes **Compose enquiry email** and opens the visitor's mail application with the address, subject and body populated.
 
@@ -48,6 +48,6 @@ The supplied ambient clip is a placeholder. For your final fictional solar-assem
 
 ## Imagery, brands, testimonials
 
-Some images are generated concepts, not evidence of completed Knash Engineering Limited installations. The project portfolio and stories are intentionally labeled as conceptual studies. Prototype logo references, if present, do **not** establish customer relationships or endorsements.
+Some images are generated concepts, not evidence of completed Knash Engineers Limited installations. The project portfolio and stories are intentionally labeled as conceptual studies. Prototype logo references, if present, do **not** establish customer relationships or endorsements.
 
 Replace all promotional brand marks, project claims, company facts and testimonials with verified, approved materials before publishing. Verified client testimonials and marks can be configured in `src/data/socialProof.js`.

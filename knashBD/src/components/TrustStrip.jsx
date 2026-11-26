@@ -53,7 +53,7 @@ export default function TrustStrip() {
   return (
     <section className="trust-section" id="approach" aria-labelledby="trust-heading" ref={sectionRef}>
       <div className="section-overline" data-reveal>
-        <span className="index-mark"><span className="index-mark__cross">+</span> THE KNASH ENGINEERING LIMITED STANDARD</span>
+        <span className="index-mark"><span className="index-mark__cross">+</span> THE KNASH ENGINEERS LIMITED STANDARD</span>
         <span className="overline-right">03 / WHAT MATTERS TO US</span>
       </div>
       <div className="trust-intro">
